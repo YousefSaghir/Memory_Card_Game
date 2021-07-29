@@ -1,0 +1,185 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Otomanopee One', sans-serif;
+    background-color: #004643;
+}
+/* Start popup */
+.popup {
+    width: 100%;
+    height: 100%;
+    background-color: #abd1c6fb;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+}
+.popup .start {
+    color: #001e1d;
+    background-color: #e16162;
+    padding: 1% 2%;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 1px solid #001e1d;
+    transition:all .5s ease-in-out  ;
+}
+.popup .start:hover {
+    background-color: transparent;
+    letter-spacing: 2px;
+    border: 2px solid #e16162;
+}
+/* End popup */
+/* Start Header */
+.header-info {
+    background-color : #fffffe;
+    padding : 2%;
+    display: flex;
+    justify-content : center;
+    align-items :center;
+}
+
+.header-info .contanier-info {
+    width : 70%;
+    display: flex;
+    flex-direction: row;
+    justify-content : space-around;
+    color : #001e1d
+}
+
+/* End Header */
+
+/* Start Container Cards */
+.container-game {
+    width: 100%;
+    display : flex;
+    justify-content: center;
+}
+
+.container-game .container-cards {
+    width:60%;
+    max-width: 930px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    cursor: pointer;
+}
+.open-second {
+    transform: rotateY(
+    180deg
+    );
+}
+.container-game .container-cards .card {
+width : 150px;
+/* height: 150px; */
+position: relative;
+transition: all .5s ease-in-out;
+transform-style: preserve-3d;
+margin: 3px;
+}
+.container-game .container-cards .card.flipped ,
+.container-game .container-cards .card.are-the-same {
+transform: rotateY(
+    180deg
+    );
+}
+.container-game .container-cards .card .back ,
+.container-game .container-cards .card .front {
+    width: 100%;
+    height : 100%;
+    position : absolute;
+    top : 0;
+    left:0
+}
+.container-game .container-cards .card .img-card {
+    display:flex;
+    justify-content : center;
+    align-items:center;
+    background-color: rgb(255, 0, 21);
+    transform: rotateY(180deg);
+    border: 1px solid #001e1d;
+}
+.container-game .container-cards .card .front {
+    display:flex;
+    justify-content : center;
+    align-items:center;
+    background-color: #e16162;
+    color: #fffffe;
+    backface-visibility: hidden;
+    border : 1px solid #001e1d
+}
+.container-game .container-cards .card .front::after {
+    content : '?';
+    font-size:  10vh;
+    font-weight : bolder;
+    font-family: monospace;
+}
+
+.container-game .container-cards .card .img-card i {
+    font-size : 10vh;
+    color: #FFF;
+}
+
+
+
+.stop {
+    pointer-events: none;
+}
+
+
+/* Start box win */
+.win {
+    width: 100%;
+    height: 0;
+    background-color: #e91e63;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    visibility: hidden;
+    transition: all .5s ease-in-out;
+}
+.win .you-win,
+.win .username-win  {
+    text-transform: uppercase;
+    font-size: 4vw;
+    color: #abd1c6;
+    text-align: center;
+    max-width: 80%;
+    padding: 2%;
+}
+.win .info-game-complate {
+    padding: 1%;
+}
+.win .info-game-complate p.you-tried ,
+.win .info-game-complate p.your-score-complate{
+    color: #001e1d;
+    font-size: 1vw;
+    font-weight: bolder;
+    text-shadow: 2px 1px white;
+    text-transform: uppercase;
+}
+.win  .replay {
+    text-transform: uppercase;
+    color: #001e1d;
+    background-color: #e16162;
+    padding: 1% 2%;
+    border-radius: 10px;
+    border: 1px solid #001e1d;
+    cursor: pointer;
+    transition: all .5s ease-in-out;
+}
+.win .replay:hover {
+    background-color: transparent;
+    border: 2px solid #e16162;
+}
+/* End box win */

@@ -101,7 +101,7 @@ const perffect = `congratulations you are win :)`;
 const medium = `compliments you are win :)`;
 const normal = `game over :|`;
 document
-          .querySelector(".you-win").innerText = `${numScore >= 70 ? perffect : numScore > 55 ? normal : medium}`;
+          .querySelector(".you-win").innerText = `${numScore >= 70 ? perffect : numScore >= 55 ? medium : normal}`;
 document
           .querySelector(".your-score-complate").innerText = `your score : ${numScore }%`;
 document
